@@ -1,0 +1,11 @@
+/*全局变量设置*/
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html{
+    font-size: 20px;
+}

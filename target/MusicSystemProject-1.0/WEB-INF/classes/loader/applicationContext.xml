@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--创建数据源对象-->
+    <bean id="myDatabaseSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <!--        通过注入为数据源中的属性赋值<property name=属性名 value=属性值/>-->
+        <!--        数据库url -->
+        <property name="url" value="jdbc:mysql://localhost:3306/musicsystem?serverTimezone=Asia/Shanghai"/>
+        <!--        数据库用户名-->
+        <property name="username" value="root"/>
+        <!--        用户密码-->
+        <property name="password" value="root"/>
+        <!--        最大连接数-->
+        <property name="maxActive" value="10" />
+    </bean>
+
+    <!--    创建SessionFactory对象-->
+    <!--    <property name=属性名 value=属性值/>-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <!--        通过注入为SessionFactory中的属性赋值-->
+        <property name="dataSource" ref="myDatabaseSource" />
+        <property name="configLocation" value="classpath:hibernate.cfg.xml" />
+        <property name="mappingLocations" value="classpath:/loader/User.hbm.xml" />
+    </bean>
+
+    <!--    扫描器-->
+    <context:component-scan base-package="dao" />
+    <context:component-scan base-package="service" />
+</beans>

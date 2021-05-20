@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <!--    <constant name="struts.i18n.encoding" value="gbk" />-->
+
+    <package name="musicSystemStruts" extends="struts-default" namespace="/" strict-method-invocation="false">
+        <!--        index.html提交的路径就是此处的name-->
+        <!--        class表示action(java类)的路径-->
+        <!--        method表示action中的方法名-->
+
+        <!--        在struts中使用spring中的bean，class路径填写bean的id -->
+<!--        普通用户登录-->
+        <action name="Login" class="userServiceImpl" method="login">
+            <!--            name表示action中的返回值-->
+            <!--            标签中的值表示要跳转的网页-->
+            <result name="success">/customer/StrutsMiddleware.html</result>
+            <result name="error">/customer/LoginFail.html</result>
+        </action>
+<!--        通用搜索歌曲-->
+        <action name="SearchMusic" class="userServiceImpl" method="searchMusic" />
+<!-- *************************************************************************************************** -->
+<!--        普通用户查看所有歌曲-->
+        <action name="ShowAllMusic" class="userServiceImpl" method="showAllMusic" />
+<!--        判断用户名是否重复-->
+        <action name="JudgeSame" class="userServiceImpl" method="judgeSame" />
+<!--        普通用户查看个人信息-->
+        <action name="SelfInfo" class="userServiceImpl" method="selfInfo" />
+<!--        普通用户注册-->
+        <action name="Register" class="userServiceImpl" method="register" />
+<!-- *************************************************************************************************** -->
+<!--        管理员登录-->
+        <action name="AdminLogin" class="adminServiceImpl" method="login" >
+            <result name="success">/admin/Success.html</result>
+            <result name="error">/admin/Fail.html</result>
+        </action>
+<!--        管理员查看所有音乐信息-->
+        <action name="AdminShowAllMusic" class="adminServiceImpl" method="showAllMusic" />
+<!--        管理员编辑音乐信息-->
+        <action name="EditMusic" class="adminServiceImpl" method="edit" />
+<!--        管理员删除音乐信息-->
+        <action name="DeleteMusic" class="adminServiceImpl" method="deleteMusic" />
+<!--        管理员添加音乐信息-->
+        <action name="AddMusic" class="adminServiceImpl" method="addMusic" />
+<!--        管理员查看用户信息-->
+        <action name="AllUser" class="adminServiceImpl" method="showAllUser" />
+<!--        管理员搜索用户-->
+        <action name="SearchUser" class="adminServiceImpl" method="searchUser" />
+<!--        管理员查看个人信息-->
+        <action name="AdminSelfInfo" class="adminServiceImpl" method="selfInfo" />
+    </package>
+</struts>

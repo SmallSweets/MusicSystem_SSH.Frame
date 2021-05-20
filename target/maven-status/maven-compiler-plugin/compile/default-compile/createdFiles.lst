@@ -1,0 +1,11 @@
+service\user\UserService.class
+dao\user\userImpl\UserDaoImpl.class
+dao\admin\AdminDao.class
+service\admin\AdminService.class
+service\user\userImpl\UserServiceImpl.class
+dao\admin\adminImpl\AdminDaoImpl.class
+service\admin\adminImp\AdminServiceImpl.class
+entity\User.class
+dao\user\UserDao.class
+entity\Admin.class
+entity\Music.class

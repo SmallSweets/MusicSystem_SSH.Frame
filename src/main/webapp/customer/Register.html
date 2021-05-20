@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/customer/Register.js"></script>
+    <script src="../js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <center>
+        <form onsubmit="return false" id="info">
+            <label>
+                用户名：
+                <input type="text" id="input" onblur="judge()"><span id="out"></span>
+            </label><br/>
+            <label>
+                密码：
+                <input type="password" name="password"><br/>
+            </label>
+            <label>
+                性别：
+                <input type="text" name="sex"><br/>
+            </label>
+            <label>
+                年龄：
+                <input type="text" name="age"><br/>
+            </label>
+            <label>
+                地址：
+                <input type="text" name="address"><br/>
+            </label>
+            <label>
+                联系方式：
+                <input type="text" name="phone"><br/>
+            </label>
+            <input type="submit" value="注册" onclick="judge()"><input type="reset" value="重置">
+        </form>
+    </center>
+</body>
+</html>

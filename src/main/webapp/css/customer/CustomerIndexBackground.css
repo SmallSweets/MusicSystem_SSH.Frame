@@ -1,0 +1,87 @@
+/*body{*/
+/*    !*背景图片路径*!*/
+/*    background-image: url("../image/CustomerLoginbackground.jpg");*/
+/*    !*background-color: antiquewhite;*!*/
+/*    !*背景图pain大小*!*/
+/*    background-size: cover;*/
+/*    !*背景图片不重复*!*/
+/*    background-repeat: no-repeat;*/
+/*}*/
+html{
+    font-size: 16px;
+    color: azure;
+}
+
+body{
+    /*元素居中*/
+    /*设置动态值*/
+    /*calc(100vw - 100px)*/
+    width: 100%;
+    /*相对于视框的高度 视框高度100vh*/
+    height: 100vh;
+    /*设置内部元素居中*/
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-image: url("../../image/CustomerLoginbackground.jpg");
+    /*背景图片大小*/
+    background-size: 100% 100%;
+}
+
+/*#background{*/
+/*    background-image: url("../image/CustomerLoginbackground.jpg");*/
+/*    !*div位置固定，最上边和最左边*!*/
+/*    position:fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    !*div大小和网页大小相同，网页大小变化图片缩放*!*/
+/*    width:100%;*/
+/*    height:100%;*/
+/*    !*div的层级关系，将div放在最底层*!*/
+/*    z-index:-10;*/
+/*    !*解决ie浏览器不兼容*!*/
+/*    zoom: 1;*/
+/*    !*背景图片平铺 不重叠*!*/
+/*    background-repeat: no-repeat;*/
+
+/*}*/
+
+a{
+    /*去除a标签超链接下划线*/
+    text-decoration: none;
+}
+
+.login_box{
+    /*宽度相对于字体的大小 宽度=rem*字体大小*/
+    width: 25rem;
+    height: auto;
+    /*内边距*/
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /*背景及不透明度*/
+    background-color: #00000060;
+    text-align: center;
+}
+
+.login_box .button{
+    width: 3rem;
+    height: 2rem;
+    font-size: 10px;
+    border-radius: 1.5rem;
+}
+
+/*表单元素占位符样式*/
+input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: #ffffff;
+    /* placeholder字体大小  */
+    font-size: 14px;
+}
+
+.login_box .input{
+    color: #ffffff;
+    width: 15rem;
+    height: 1.5rem;
+    background-color: #00000030;
+    border-bottom: solid 2px white;
+}

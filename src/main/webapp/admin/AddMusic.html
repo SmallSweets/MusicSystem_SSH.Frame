@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <center>
+<!--        当提交表单时执行js代码，return false表示禁止提交表单-->
+        <form id="musicInfo" onsubmit="return false" method="get">
+            <label >音乐名称：
+                <input type="text" name="name" ><br/>
+            </label>
+            <label>歌手：
+                <input type="text" name="singer"><br/>
+            </label>
+            <label>添加时间：
+                <input type="text" name="time"><br/>
+            </label>
+            <label>歌曲url：
+                <input type="text" name="url"><br/>
+            </label>
+            <input type="submit" value="保存" onclick="save()">
+            <input type="reset" value="重置">
+        </form>
+    </center>
+</body>
+
+<script src="../js/jquery-3.5.1.js" ></script>
+<script>
+    function save(){
+        $.ajax({
+            url:"AddMusic",
+            async:true,
+            type:"GET",
+            //提交表单
+            data:$('#musicInfo').serialize(),
+            success:function (){
+                alert("添加成功");
+            },
+            error:function (){
+                alert("添加失败");
+            }
+        });
+    }
+</script>
+</html>
