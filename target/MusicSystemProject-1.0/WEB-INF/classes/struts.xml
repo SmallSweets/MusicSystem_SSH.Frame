@@ -32,7 +32,7 @@
 <!-- *************************************************************************************************** -->
 <!--        管理员登录-->
         <action name="AdminLogin" class="adminServiceImpl" method="login" >
-            <result name="success">/admin/Success.html</result>
+            <result name="success">/admin/StrutsMiddleware.html</result>
             <result name="error">/admin/Fail.html</result>
         </action>
 <!--        管理员查看所有音乐信息-->

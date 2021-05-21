@@ -28,7 +28,7 @@ public class AdminDaoImpl implements AdminDao {
         query.setParameter(1,name);
         query.setParameter(2,password);
         list = query.list();
-        System.out.println(list.size());
+        session.close();
         if (list.size() != 0){
             return "success";
         }else {
@@ -42,6 +42,7 @@ public class AdminDaoImpl implements AdminDao {
         query = session.createQuery("from Music");
         list = query.list();
         jsonArray = JSONArray.fromObject(list);
+        session.close();
         return jsonArray;
     }
 
@@ -54,6 +55,7 @@ public class AdminDaoImpl implements AdminDao {
         query.setParameter(1,mid);
         query.executeUpdate();
         transaction.commit();
+        session.close();
     }
 
 //    添加音乐信息
@@ -62,6 +64,7 @@ public class AdminDaoImpl implements AdminDao {
         transaction = session.beginTransaction();
         session.save(object);
         transaction.commit();
+        session.close();
     }
 
     public void searchMusic() {
@@ -73,6 +76,7 @@ public class AdminDaoImpl implements AdminDao {
         query = session.createQuery("from User");
         list = query.list();
         jsonArray = JSONArray.fromObject(list);
+        session.close();
         return jsonArray;
     }
 
@@ -89,6 +93,7 @@ public class AdminDaoImpl implements AdminDao {
         }
         list = query.list();
         jsonArray = JSONArray.fromObject(list);
+        session.close();
         return jsonArray;
     }
 
@@ -98,6 +103,7 @@ public class AdminDaoImpl implements AdminDao {
         query.setParameter(1,name);
         list = query.list();
         jsonArray = JSONArray.fromObject(list);
+        session.close();
         return jsonArray;
     }
 }

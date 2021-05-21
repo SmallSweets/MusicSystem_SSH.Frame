@@ -1,0 +1,15 @@
+table {
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+}
+
+th {
+    width: 7rem;
+    text-align: center;
+}
+
+td {
+    border-bottom: orange solid 0.01rem;
+    text-align: center;
+    height: 3rem;
+}

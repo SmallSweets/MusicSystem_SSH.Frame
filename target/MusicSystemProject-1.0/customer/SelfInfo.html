@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <script src="../js/jquery-3.5.1.js"></script>
     <script src="../js/MakeHeader.js"></script>
+    <script src="../js/customer/SelfInfo.js"></script>
 </head>
 <body>
     <center>
@@ -12,32 +14,9 @@
     </center>
 </body>
 
-<script src="../js/jquery-3.5.1.js"></script>
 <script>
     $(window).ready(function (){
         selfInfo();
     })
-
-    var list = ["id","name","password","sex","age","address","phone","vip"]
-    var form = document.getElementById("info");
-
-    function selfInfo(){
-        $.ajax({
-            url:"SelfInfo",
-            dataType:"json",
-            async:true,
-            success:function (res){
-                for (var i = 0;i < res.length;i++){
-                    for (var x = 0;x < list.length;x++){
-                        var input = document.createElement("input");
-                        var br = document.createElement("br");
-                        form.appendChild(input);
-                        form.appendChild(br);
-                        input.value = res[i][list[x]];
-                    }
-                }
-            }
-        })
-    }
 </script>
 </html>

@@ -12,7 +12,6 @@ import service.admin.AdminService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Service
@@ -30,10 +29,7 @@ public class AdminServiceImpl extends ActionSupport implements AdminService, Mod
         String name = request.getParameter("name");
         String password = request.getParameter("password");
         String result = adminDao.login(name, password);
-        System.out.println(result);
         if (result == "success"){
-            System.out.println("set attribute");
-            System.out.println("传值名称" + name);
             request.getSession().setAttribute("admin",name);
         }
         return result;
@@ -97,9 +93,9 @@ public class AdminServiceImpl extends ActionSupport implements AdminService, Mod
     public void selfInfo() {
         request = ServletActionContext.getRequest();
         String name = (String) request.getSession().getAttribute("admin");
-        System.out.println("info方法" + name);
         JSONArray jsonArray = (JSONArray) adminDao.selfInfo(name);
         response = ServletActionContext.getResponse();
+        response.setContentType("text/html;charset=utf-8");
         try {
             response.getWriter().println(jsonArray);
         } catch (IOException e) {

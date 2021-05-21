@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <script src="../js/MakeHeader.js"></script>
+    <script src="../js/jquery-3.5.1.js" ></script>
+    <script src="../js/admin/AddMusic.js"></script>
 </head>
 <body>
     <center>
@@ -25,23 +29,4 @@
         </form>
     </center>
 </body>
-
-<script src="../js/jquery-3.5.1.js" ></script>
-<script>
-    function save(){
-        $.ajax({
-            url:"AddMusic",
-            async:true,
-            type:"GET",
-            //提交表单
-            data:$('#musicInfo').serialize(),
-            success:function (){
-                alert("添加成功");
-            },
-            error:function (){
-                alert("添加失败");
-            }
-        });
-    }
-</script>
 </html>

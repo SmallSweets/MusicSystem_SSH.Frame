@@ -17,15 +17,25 @@ function find(){
                     var td = document.createElement("td");
                     tr.appendChild(td);
                     if (list[x] === "url"){
-                        td.innerHTML = "<a style='text-decoration:none;' href=" + data[i][list[x]] + ">▶</a>";
+                        td.innerHTML = "<a style='text-decoration:none;' href=" + res[i][list[x]] + ">▶</a>";
                         continue;
                     }
                     td.innerText = res[i][list[x]];
                 }
+                $("tr").addClass("hover_tr");
             }
         },
         error:function (){
             alert("搜索失败");
         }
+    });
+}
+
+// 设置鼠标滑过音乐列表时，改变音乐列表的背景
+function tr_hover(){
+    $(".hover_tr").mouseenter(function () {
+        $(this).css("background-color","#add8e650");
+    }).mouseleave(function (){
+        $(this).css("background-color","#ffffff");
     });
 }

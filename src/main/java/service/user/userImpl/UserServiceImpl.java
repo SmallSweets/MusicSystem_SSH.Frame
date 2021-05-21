@@ -77,6 +77,7 @@ public class UserServiceImpl extends ActionSupport implements UserService, Model
         String name = (String) request.getSession().getAttribute("customer");
         JSONArray jsonArray = (JSONArray) userDao.selfInfo(name);
         response = ServletActionContext.getResponse();
+        response.setContentType("text/html;charset=utf-8");
         try {
             response.getWriter().println(jsonArray);
         } catch (IOException e) {

@@ -1,3 +1,4 @@
+// 动态生成并加载数据和标签到页面
 function ShowAllMusic(){
     var list = ["id","name","singer","time","url"];
     $.ajax({
@@ -20,10 +21,21 @@ function ShowAllMusic(){
                     }
                     td.innerText = data[i][list[x]];
                 }
+                $("tr").addClass("hover_tr");
             }
         },
         error:function(){
             alert("请求失败");
         }
+    });
+}
+
+
+// 设置鼠标滑过音乐列表时，改变音乐列表的背景
+function tr_hover(){
+    $(".hover_tr").mouseenter(function () {
+        $(this).css("background-color","#add8e650");
+    }).mouseleave(function (){
+        $(this).css("background-color","#ffffff");
     });
 }

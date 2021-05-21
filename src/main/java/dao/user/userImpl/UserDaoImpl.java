@@ -31,6 +31,7 @@ public class UserDaoImpl implements UserDao {
         query.setParameter(1,name);
         query.setParameter(2,password);
         list = query.list();
+        session.close();
         if (list.size() != 0){
             return "success";
         }else {
@@ -44,6 +45,7 @@ public class UserDaoImpl implements UserDao {
         query = session.createQuery("from Music");
         list = query.list();
         jsonArray = JSONArray.fromObject(list);
+        session.close();
         return jsonArray;
     }
 
@@ -61,17 +63,17 @@ public class UserDaoImpl implements UserDao {
         }
         list = query.list();
         jsonArray = JSONArray.fromObject(list);
+        session.close();
         return jsonArray;
     }
 
 //    判断用户注册时用户名是否重复
     public String judgeSame(String input) {
-        System.out.println(input);
         session = sessionFactory.openSession();
         query = session.createQuery("from User where name = ?1");
         query.setParameter(1,input);
         list = query.list();
-        System.out.println(list.size());
+        session.close();
         if (list.size() != 0){
             return "have";
         }else {
@@ -86,6 +88,7 @@ public class UserDaoImpl implements UserDao {
         query.setParameter(1,name);
         list = query.list();
         jsonArray = JSONArray.fromObject(list);
+        session.close();
         return jsonArray;
     }
 
@@ -96,9 +99,11 @@ public class UserDaoImpl implements UserDao {
         session.save(user);
         try {
             transaction.commit();
+            session.close();
             return "succ";
         }catch (Exception e){
             transaction.rollback();
+            session.close();
             return "fail";
         }
     }

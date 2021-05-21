@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin/ShowAllMusic.css">
+    <script src="../js/MakeHeader.js"></script>
+    <script src="../js/admin/ShowAllMusic.js"></script>
 </head>
 <body>
     <center>
         <table id="box">
             <tr><th>序号</th><th>歌曲名</th><th>歌手</th><th>添加时间</th><th>播放</th><th>编辑</th><th>删除</th></tr>
+            <tr><td>sss</td><td>sss</td></tr>
+            <tr><td>sss</td><td>sss</td></tr>
         </table>
     </center>
 </body>
@@ -16,60 +22,10 @@
 <script type="text/javascript">
     window.onload = function (){
         ShowAllMusic();
-    }
-
-    function ShowAllMusic(){
-        var list = ["id","name","singer","time","url"];
-        $.ajax({
-            url:"ShowAllMusic",    //请求的url地址
-            dataType:"json",   //返回格式为json
-            async:true,//请求是否异步，默认为异步，这也是ajax重要特性
-            type:"GET",   //请求方式
-            //接收到的是一个json数组
-            success:function(data){
-                for (var i=0;i < data.length;i++){
-                    var box = document.getElementById("box");
-                    var tr = document.createElement("tr");
-                    box.appendChild(tr);
-                    for (var x=0;x < list.length;x++){
-                        var td = document.createElement("td");
-                        tr.appendChild(td);
-                        if (list[x] === "url"){
-                            td.innerHTML = "<a href=" + data[i][list[x]] + ">▶</a>";
-                            continue;
-                        }
-                        td.innerText = data[i][list[x]];
-                    }
-
-                    var del = document.createElement("td");
-                    del.innerHTML = "<a onclick='del(this)' id=" + data[i]["id"] + ">删除</a>";
-                    tr.appendChild(del);
-
-                    var edit = document.createElement("td");
-                    edit.innerHTML = "<a href='MusicEidt.html'>编辑</a>";
-                    tr.appendChild(edit);
-                }
-            },
-            error:function(){
-                alert("请求失败");
-            }
-        });
-    }
-
-    function del(obj){
-        var id = obj.id;
-        $.ajax({
-            url:"DeleteMusic",    //请求的url地址
-            async:true,//请求是否异步，默认为异步，这也是ajax重要特性
-            type:"GET",   //请求方式
-            data:{'id':id},
-            success:function(data){
-                alert("删除成功");
-                location.reload();
-            },
-            error:function(){
-                alert("请求失败");
-            }
+        $("hover_tr").mouseenter(function () {
+            $(this).css("background-color","#add8e650");
+        }).mouseleave(function (){
+            $(this).css("background-color","#ffffff");
         });
     }
 </script>

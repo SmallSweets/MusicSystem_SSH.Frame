@@ -22,10 +22,20 @@ function find(){
                     }
                     td.innerText = res[i][list[x]];
                 }
+                $("tr").addClass("hover_tr");
             }
         },
         error:function (){
             alert("搜索失败");
         }
+    });
+}
+
+// 设置鼠标滑过音乐列表时，改变音乐列表的背景
+function tr_hover(){
+    $(".hover_tr").mouseenter(function () {
+        $(this).css("background-color","#add8e650");
+    }).mouseleave(function (){
+        $(this).css("background-color","#ffffff");
     });
 }
