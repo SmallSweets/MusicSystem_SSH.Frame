@@ -1,6 +1,6 @@
 function find(){
     var list = ["id","name","singer","time","url"];
-    var info = document.getElementById("musicSearch").value;
+    var info = document.getElementById("inputFra").value;
     $.ajax({
         url:"SearchMusic",
         type:"GET",

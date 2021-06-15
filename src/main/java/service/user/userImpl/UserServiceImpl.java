@@ -23,6 +23,7 @@ public class UserServiceImpl extends ActionSupport implements UserService, Model
     private HttpServletResponse response;
     private User user;
 
+//    用户登录
     public String login() {
         request = ServletActionContext.getRequest();
         String name = request.getParameter("name");
@@ -34,6 +35,7 @@ public class UserServiceImpl extends ActionSupport implements UserService, Model
         return result;
     }
 
+//    显示所有用户信息
     public void showAllMusic() {
         JSONArray jsonArray = (JSONArray) userDao.showAllMusic();
         response = ServletActionContext.getResponse();
@@ -46,6 +48,7 @@ public class UserServiceImpl extends ActionSupport implements UserService, Model
         }
     }
 
+//    查询音乐信息
     public void searchMusic() {
         request = ServletActionContext.getRequest();
         response = ServletActionContext.getResponse();
@@ -59,6 +62,7 @@ public class UserServiceImpl extends ActionSupport implements UserService, Model
         }
     }
 
+//    判断用户名是否存在
     public void judgeSame() {
         request = ServletActionContext.getRequest();
         response = ServletActionContext.getResponse();
@@ -72,6 +76,7 @@ public class UserServiceImpl extends ActionSupport implements UserService, Model
         }
     }
 
+//    个人信息
     public void selfInfo() {
         request = ServletActionContext.getRequest();
         String name = (String) request.getSession().getAttribute("customer");
@@ -85,10 +90,12 @@ public class UserServiceImpl extends ActionSupport implements UserService, Model
         }
     }
 
+//    struts自动赋值给实体类
     public Object getModel() {
         return user;
     }
 
+//    用户注册
     public void register() {
         response = ServletActionContext.getResponse();
         user = (User) getModel();

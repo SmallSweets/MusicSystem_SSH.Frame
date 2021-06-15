@@ -1,6 +1,6 @@
 function find(){
     var list = ["id","name","singer","time","url"];
-    var info = document.getElementById("musicSearch").value;
+    var info = document.getElementById("inputFra").value;
     $.ajax({
         url:"SearchMusic",
         type:"GET",
@@ -17,7 +17,7 @@ function find(){
                     var td = document.createElement("td");
                     tr.appendChild(td);
                     if (list[x] === "url"){
-                        td.innerHTML = "<a style='text-decoration:none;' href=" + data[i][list[x]] + ">▶</a>";
+                        td.innerHTML = "<a style='text-decoration:none;' href=" + res[i][list[x]] + ">▶</a>";
                         continue;
                     }
                     td.innerText = res[i][list[x]];

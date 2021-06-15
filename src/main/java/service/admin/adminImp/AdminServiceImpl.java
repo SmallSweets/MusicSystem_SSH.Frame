@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import dao.admin.adminImpl.AdminDaoImpl;
 import entity.Music;
+import entity.User;
 import net.sf.json.JSONArray;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Service
-public class AdminServiceImpl extends ActionSupport implements AdminService, ModelDriven<Object> {
+public class AdminServiceImpl extends ActionSupport implements AdminService {
     @Autowired
     private AdminDaoImpl adminDao;
 
     private HttpServletRequest request;
     private HttpServletResponse response;
     private Music music = new Music();
+    private User user = new User();
 
 //    管理员登录
     public String login() {
@@ -57,13 +59,31 @@ public class AdminServiceImpl extends ActionSupport implements AdminService, Mod
 
 //    添加音乐信息
     public void addMusic() {
-        music = getModel();
+        music = getMusic();
         adminDao.addMusic(music);
     }
 
-//    获取表单数据并自动赋值给实体类
-    public Music getModel() {
+//    实现getModel方法 获取表单数据并自动赋值给实体类 但只能封装一个实体类
+//    public Music getModel() {
+//        return music;
+//    }
+
+
+//    获取表单数据并自动赋值给实体类 可以封装多个实体类
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Music getMusic() {
         return music;
+    }
+
+    public void setMusic(Music music) {
+        this.music = music;
     }
 
     public void showAllUser() {
@@ -77,6 +97,7 @@ public class AdminServiceImpl extends ActionSupport implements AdminService, Mod
         }
     }
 
+//    查询用户信息
     public void searchUser() {
         request = ServletActionContext.getRequest();
         response = ServletActionContext.getResponse();
@@ -90,6 +111,7 @@ public class AdminServiceImpl extends ActionSupport implements AdminService, Mod
         }
     }
 
+//    个人信息
     public void selfInfo() {
         request = ServletActionContext.getRequest();
         String name = (String) request.getSession().getAttribute("admin");
@@ -102,4 +124,11 @@ public class AdminServiceImpl extends ActionSupport implements AdminService, Mod
             e.printStackTrace();
         }
     }
+
+//    添加用户
+    public void addUser(){
+        user = getUser();
+        adminDao.addUser(user);
+    }
+
 }

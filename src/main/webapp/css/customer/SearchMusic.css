@@ -13,3 +13,18 @@ td {
     text-align: center;
     height: 3rem;
 }
+
+input {
+    font-size: 25px;
+    height: 3rem;
+    margin-top: 1rem;
+}
+
+#inputFra {
+    width: 20rem;
+    border: #6495ed90 solid 0.1rem;
+}
+
+#submitBtn {
+    width: 5rem;
+}

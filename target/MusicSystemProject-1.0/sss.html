@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            position: absolute;
+            top:500px;
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            position: absolute;
+        }
+        #test1{
+            z-index: 9999;
+            display: none;
+            background-color: aqua;
+        }
+        #test2{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="test1"></div>
+    <div id="test2"></div>
+
+    <button onclick="dd()">点击</button>
+</body>
+
+<script type="text/javascript">
+    function dd(){
+        document.getElementById("test1").style.display = "block";
+    }
+</script>
+</html>

@@ -43,6 +43,8 @@
         <action name="DeleteMusic" class="adminServiceImpl" method="deleteMusic" />
 <!--        管理员添加音乐信息-->
         <action name="AddMusic" class="adminServiceImpl" method="addMusic" />
+<!--        管理员添加用户-->
+        <action name="AddUser" class="adminServiceImpl" method="addUser" />
 <!--        管理员查看用户信息-->
         <action name="AllUser" class="adminServiceImpl" method="showAllUser" />
 <!--        管理员搜索用户-->

@@ -67,10 +67,20 @@ public class AdminDaoImpl implements AdminDao {
         session.close();
     }
 
+//    添加用户
+    public void addUser(Object object) {
+        Session session = sessionFactory.openSession();
+        transaction = session.beginTransaction();
+        session.save(object);
+        transaction.commit();
+        session.close();
+    }
+
     public void searchMusic() {
 
     }
 
+//    查看所有用户信息
     public Object showAllUser() {
         Session session = sessionFactory.openSession();
         query = session.createQuery("from User");
@@ -80,6 +90,7 @@ public class AdminDaoImpl implements AdminDao {
         return jsonArray;
     }
 
+//    查询用户
     public Object searchUser(String input) {
         Session session = sessionFactory.openSession();
         query = session.createQuery("from User where id = ?1 or name = ?2 or password = ?3 or sex = ?4 or age = ?5 or address = ?6 or phone = ?7 or vip = ?8");
@@ -97,6 +108,7 @@ public class AdminDaoImpl implements AdminDao {
         return jsonArray;
     }
 
+//    查看个人信息
     public Object selfInfo(String name) {
         Session session = sessionFactory.openSession();
         query = session.createQuery("from Admin where name = ?1");

@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../css/global.css" />
-    <script src="../js/MakeHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/customer/HomePage.css">
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script src="../js/customer/MakeHeader.js"></script>
 </head>
 <body>
-
+    <div id="box">
+        <!--        轮播图片-->
+        <ul id="transform">
+            <li><img src="../image/1.jpg" alt="this is a picture"></li>
+            <li><img src="../image/2.jpg" alt="this is a picture"></li>
+            <li><img src="../image/3.jpg" alt="this is a picture"></li>
+        </ul>
+        <ul id="point">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="left"><p><</p></div>
+    <div id="right"><p>></p></div>
 </body>
+
+<script src="../js/customer/HomePage.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(window).ready(function (){
+        automatic();
+    })
+</script>
 </html>

@@ -1,0 +1,52 @@
+/*设置图片大小*/
+img {
+    width: 42rem;
+    height: 25rem;
+    cursor: pointer;
+}
+#transform {
+    position: absolute;
+    top: 5rem;
+    left: 17rem;
+    list-style: none;
+}
+/*设置轮播图片样式*/
+#transform li {
+    position: absolute;
+    opacity: 100;
+}
+#point {
+    position: absolute;
+    top: 31rem;
+    left: 34rem;
+    display: flex;
+    list-style: none;
+}
+/*小点样式*/
+#point li {
+    width: 20px;
+    height: 20px;
+    background-color: aqua;
+    border-radius: 50%;
+    margin-left: 20px;
+    cursor: pointer;
+}
+/*    左右切换按钮样式*/
+#left {
+    position: absolute;
+    top: 15rem;
+    left: 15%;
+    font-size: 70px;
+    font-weight: bold;
+    color: #00000070;
+    cursor: pointer;
+}
+#right {
+    position: absolute;
+    top: 15rem;
+    left: 80%;
+    font-size: 70px;
+    font-weight: bold;
+    color: #00000070;
+    cursor: pointer;
+}

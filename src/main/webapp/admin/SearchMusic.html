@@ -5,12 +5,13 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="stylesheet" type="text/css" href="../css/admin/SearchMusic.css">
-    <script src="../js/MakeHeader.js"></script>
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script src="../js/admin/MakeHeader.js"></script>
     <script src="../js/admin/SearchMusic.js"></script>
 </head>
 <body>
     <center>
-        <input id="musicSearch" type="text"><input type="submit" value="搜索" onclick="find()">
+        <input id="inputFra" type="text"><input type="submit" id="submitBtn" value="搜索" onclick="find()">
         <br/>
         <br/>
         <br/>
@@ -19,10 +20,10 @@
     </center>
 </body>
 
-<script src="../js/jquery-3.5.1.js"></script>
 <script>
-    $(window).ready(function (){
-        find();
+    $("#submitBtn").click(function (){
+        //因为标签加载需要时间，所以这里等待标签加载完再添加事件
+        setTimeout("tr_hover()",1000);
     })
 </script>
 </html>

@@ -13,3 +13,23 @@ td {
     text-align: center;
     height: 3rem;
 }
+
+/*编辑音乐信息 弹出窗口样式*/
+#editInfo {
+    position: fixed;
+    display: none;
+    width: 500px;
+    height: 500px;
+    background-color: cornflowerblue;
+    z-index: 9999;
+    top: 100px;
+    left: 300px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+#editInfo form input {
+    width: 350px;
+    height: 50px;
+    margin-top: 20px;
+}

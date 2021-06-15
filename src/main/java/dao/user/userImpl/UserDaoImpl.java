@@ -51,6 +51,7 @@ public class UserDaoImpl implements UserDao {
 
 //    普通用户查询歌曲
     public Object searchMusic(String input) {
+        System.out.println(input);
         session = sessionFactory.openSession();
         query = session.createQuery("from Music where id = ?1 or name = ?2 or time = ?3 or singer = ?4 or url = ?5");
         try {

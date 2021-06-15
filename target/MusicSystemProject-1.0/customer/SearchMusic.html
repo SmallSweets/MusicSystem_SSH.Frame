@@ -8,14 +8,14 @@
 <!--    引入js文件-->
     <script src="../js/jquery-3.5.1.js"></script>
 <!--    添加头部-->
-    <script src="../js/MakeHeader.js"></script>
+    <script src="../js/customer/MakeHeader.js"></script>
     <script src="../js/customer/SearchMusic.js"></script>
 <!--    引入css文件-->
 
 </head>
 <body>
     <center>
-        <input id="musicSearch" type="text"><input type="submit" value="搜索" id="search" onclick="find()">
+        <input id="inputFra" type="text"><input type="submit" value="搜索" id="submitBtn" onclick="find()">
         <br/>
         <br/>
         <br/>
@@ -25,7 +25,7 @@
 </body>
 
 <script type="text/javascript">
-    $("#search").click(function (){
+    $("#submitBtn").click(function (){
         //因为标签加载需要时间，所以这里等待标签加载完再添加事件
         setTimeout("tr_hover()",1000);
     })
