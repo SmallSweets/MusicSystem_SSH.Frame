@@ -1,3 +1,6 @@
+// 因为此js文件要被引入到html文件中，所以此处的src要相对于html文件的位置
+document.write("<script language=javascript src='../js/admin/ShowAllMusic.js'></script>");
+
 function find(){
     var list = ["id","name","singer","time","url"];
     var info = document.getElementById("inputFra").value;
@@ -24,11 +27,13 @@ function find(){
                 }
 
                 var del = document.createElement("td");
-                del.innerHTML = "<a onclick='del(this)' id=" + res[i]["id"] + ">删除</a>";
+                del.innerHTML = "<a onclick='edit(this)' class="+ res[i]["id"] +">编辑</a>";
+                del.style.cursor = "pointer";
                 tr.appendChild(del);
 
                 var edit = document.createElement("td");
-                edit.innerHTML = "<a href='MusicEidt.html'>编辑</a>";
+                edit.innerHTML = "<a onclick='det(this)' id=" + res[i]["id"] + ">删除</a>";
+                edit.style.cursor = "pointer";
                 tr.appendChild(edit);
             }
         },
@@ -37,3 +42,4 @@ function find(){
         }
     });
 }
+

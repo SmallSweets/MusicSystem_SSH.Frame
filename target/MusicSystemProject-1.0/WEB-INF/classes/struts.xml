@@ -51,5 +51,7 @@
         <action name="SearchUser" class="adminServiceImpl" method="searchUser" />
 <!--        管理员查看个人信息-->
         <action name="AdminSelfInfo" class="adminServiceImpl" method="selfInfo" />
+<!--        管理员删除用户信息-->
+        <action name="DeleteUser" class="adminServiceImpl" method="deleteUser" />
     </package>
 </struts>

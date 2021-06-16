@@ -1,7 +1,6 @@
 package service.admin.adminImp;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 import dao.admin.adminImpl.AdminDaoImpl;
 import entity.Music;
 import entity.User;
@@ -54,7 +53,7 @@ public class AdminServiceImpl extends ActionSupport implements AdminService {
     public void deleteMusic() {
         request = ServletActionContext.getRequest();
         String id = request.getParameter("id");
-        adminDao.delete(id);
+        adminDao.deleteMusic(id);
     }
 
 //    添加音乐信息
@@ -68,8 +67,7 @@ public class AdminServiceImpl extends ActionSupport implements AdminService {
 //        return music;
 //    }
 
-
-//    获取表单数据并自动赋值给实体类 可以封装多个实体类
+    //    获取表单数据并自动赋值给实体类 可以封装多个实体类
     public User getUser() {
         return user;
     }
@@ -86,6 +84,8 @@ public class AdminServiceImpl extends ActionSupport implements AdminService {
         this.music = music;
     }
 
+
+//    显示所有用户信息
     public void showAllUser() {
         response = ServletActionContext.getResponse();
         JSONArray jsonArray = (JSONArray) adminDao.showAllUser();
@@ -129,6 +129,13 @@ public class AdminServiceImpl extends ActionSupport implements AdminService {
     public void addUser(){
         user = getUser();
         adminDao.addUser(user);
+    }
+
+//    删除用户
+    public void deleteUser() {
+        request = ServletActionContext.getRequest();
+        String id = request.getParameter("id");
+        adminDao.deleteUser(id);
     }
 
 }

@@ -5,15 +5,17 @@ public interface AdminDao {
 
     Object showAllMusic();
 
-    void delete(String id);
+    void deleteMusic(String id);
 
     void addMusic(Object object);
-
-    void searchMusic();
 
     Object showAllUser();
 
     Object searchUser(String input);
 
     Object selfInfo(String name);
+
+    void addUser(Object object);
+
+    void deleteUser(String id);
 }

@@ -11,27 +11,27 @@
         <!--        当提交表单时执行js代码，return false表示禁止提交表单-->
         <form id="userInfo" onsubmit="return false" method="get">
             <label >用户名：
-                <input type="text" name="name" ><br/>
+                <input type="text" name="user.name" ><br/>
             </label>
             <label>密码：
-                <input type="text" name="password"><br/>
+                <input type="text" name="user.password"><br/>
             </label>
             <label>性别：
-                <input type="text" name="sex"><br/>
+                <input type="text" name="user.sex"><br/>
             </label>
             <label>年龄：
-                <input type="text" name="age"><br/>
+                <input type="text" name="user.age"><br/>
             </label>
             <label>地址：
-                <input type="text" name="address"><br/>
+                <input type="text" name="user.address"><br/>
             </label>
             <label>电话：
-                <input type="text" name="phone"><br/>
+                <input type="text" name="user.phone"><br/>
             </label>
             <label>是否会员：
-                <input type="text" name="vip"><br/>
+                <input type="text" name="user.vip"><br/>
             </label>
-            <input type="submit" value="保存" onclick="save()">
+            <input type="submit" value="保存" onclick="addUser()">
             <input type="reset" value="重置">
         </form>
     </center>

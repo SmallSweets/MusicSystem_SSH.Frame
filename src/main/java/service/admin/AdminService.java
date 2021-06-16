@@ -8,4 +8,6 @@ public interface AdminService {
     void showAllUser();
     void searchUser();
     void selfInfo();
+    void addUser();
+    void deleteUser();
 }

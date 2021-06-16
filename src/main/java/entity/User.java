@@ -125,4 +125,19 @@ public class User {
         result = 31 * result + (vip != null ? vip.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", sex='" + sex + '\'' +
+                ", age='" + age + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", vip='" + vip + '\'' +
+                '}';
+    }
+
 }

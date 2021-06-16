@@ -1,4 +1,4 @@
-function save(){
+function addUser(){
     $.ajax({
         url:"AddUser",
         async:true,

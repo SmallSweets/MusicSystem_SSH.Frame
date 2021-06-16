@@ -13,16 +13,16 @@
 <!--        当提交表单时执行js代码，return false表示禁止提交表单-->
         <form id="musicInfo" onsubmit="return false" method="get">
             <label >音乐名称：
-                <input type="text" name="name" ><br/>
+                <input type="text" name="music.name" ><br/>
             </label>
             <label>歌手：
-                <input type="text" name="singer"><br/>
+                <input type="text" name="music.singer"><br/>
             </label>
             <label>添加时间：
-                <input type="text" name="time"><br/>
+                <input type="text" name="music.time"><br/>
             </label>
             <label>歌曲url：
-                <input type="text" name="url"><br/>
+                <input type="text" name="music.url"><br/>
             </label>
             <input type="submit" value="保存" onclick="save()">
             <input type="reset" value="重置">

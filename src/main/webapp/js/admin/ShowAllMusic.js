@@ -1,6 +1,5 @@
 var list = ["id","name","singer","time","url"];
 
-
 function ShowAllMusic(){
     $.ajax({
         url:"ShowAllMusic",    //请求的url地址
@@ -28,13 +27,16 @@ function ShowAllMusic(){
                     td.innerText = data[i][list[x]];
                 }
 
-                var del = document.createElement("td");
-                del.innerHTML = "<a onclick='del(this)' id=" + data[i]["id"] + ">删除</a>";
-                tr.appendChild(del);
-
                 var edit = document.createElement("td");
                 edit.innerHTML = "<a onclick='edit(this)' class="+ data[i]["id"] +">编辑</a>";
+                edit.style.cursor = "pointer";
                 tr.appendChild(edit);
+
+                var del = document.createElement("td");
+                del.innerHTML = "<a onclick='det(this)' id=" + data[i]["id"] + ">删除</a>";
+                del.style.cursor = "pointer";
+                tr.appendChild(del);
+
             }
         },
         error:function(){
@@ -43,7 +45,7 @@ function ShowAllMusic(){
     });
 }
 
-function del(obj){
+function det(obj){
     var id = obj.id;
     $.ajax({
         url:"DeleteMusic",    //请求的url地址

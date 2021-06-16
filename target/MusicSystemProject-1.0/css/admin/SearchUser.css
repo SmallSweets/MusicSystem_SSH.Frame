@@ -3,3 +3,14 @@ table {
     border-collapse: separate;
     border-spacing: 5rem 1rem;
 }
+
+#container {
+    width: 400px;
+    height: 500px;
+    display: none;
+    background-color: lightblue;
+    z-index: 9999;
+    position: fixed;
+    top: 100px;
+    left: 300px;
+}

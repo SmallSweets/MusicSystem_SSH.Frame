@@ -86,4 +86,15 @@ public class Music {
         result = 31 * result + (url != null ? url.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Music{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", singer='" + singer + '\'' +
+                ", time='" + time + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

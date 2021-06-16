@@ -1,3 +1,6 @@
+// 在此 js 文件中 引入其他 js 文件
+document.write("<script language=JavaScript src='../js/admin/ShowAllUser.js'></script>");
+
 function search(){
     var list = ["id","name","password","sex","age","address","phone","vip"]
     var input = document.getElementsByName("input")[0].value;
@@ -17,15 +20,23 @@ function search(){
                     tr.appendChild(td);
                     td.innerText = res[i][list[x]];
                 }
+                var edit = document.createElement("td");
+                tr.appendChild(edit);
+                edit.innerText = "编辑";
+                edit.style.cursor = "pointer";
+                edit.className = res[i]["id"];
+                // 共用 所有用户信息js中的方法
+                edit.onclick = showEditDiv;
+
+                var del = document.createElement("td");
+                tr.appendChild(del);
+                del.innerText = "删除";
+                del.id = res[i]["id"];
+                del.style.cursor = "pointer";
+                // 共用 所有用户信息js中的方法
+                del.onclick = det;
             }
 
-            var edit = document.createElement("td");
-            tr.appendChild(edit);
-            edit.innerHTML = "<a href=''>编辑</a>";
-
-            var del = document.createElement("td");
-            tr.appendChild(del);
-            del.innerHTML = "<a href=''>删除</a>";
         }
     })
 }

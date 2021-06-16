@@ -47,7 +47,7 @@ public class AdminDaoImpl implements AdminDao {
     }
 
 //    删除音乐信息
-    public void delete(String id) {
+    public void deleteMusic(String id) {
         Session session = sessionFactory.openSession();
         transaction = session.beginTransaction();
         query = session.createQuery("delete from Music WHERE id = ?1");
@@ -76,9 +76,6 @@ public class AdminDaoImpl implements AdminDao {
         session.close();
     }
 
-    public void searchMusic() {
-
-    }
 
 //    查看所有用户信息
     public Object showAllUser() {
@@ -117,5 +114,15 @@ public class AdminDaoImpl implements AdminDao {
         jsonArray = JSONArray.fromObject(list);
         session.close();
         return jsonArray;
+    }
+
+    public void deleteUser(String id) {
+        Session session = sessionFactory.openSession();
+        transaction = session.beginTransaction();
+        query = session.createQuery("delete User where id = ?1");
+        query.setParameter(1,Integer.parseInt(id));
+        query.executeUpdate();
+        transaction.commit();
+        session.close();
     }
 }
