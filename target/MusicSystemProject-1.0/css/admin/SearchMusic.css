@@ -1,44 +1,19 @@
-table {
-    margin-top: 1.5rem;
-    border-collapse: separate;
-    border-spacing: 5rem 1rem;
-}
-
-td {
-    border-bottom: orange solid 1px;
-}
-
-input {
+#inputFra, #submitBtn {
     font-size: 25px;
-    height: 3rem;
-    margin-top: 1rem;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
 #inputFra {
+    margin-bottom: 1px;
     width: 20rem;
+    height: 60px;
     border: #6495ed90 solid 0.1rem;
 }
 
 #submitBtn {
+    margin-bottom: 0;
+    height: 65px;
     width: 5rem;
-}
-
-/*编辑音乐信息 弹出窗口样式*/
-#editInfo {
-    position: fixed;
-    display: none;
-    width: 500px;
-    height: 500px;
-    background-color: cornflowerblue;
-    z-index: 9999;
-    top: 100px;
-    left: 300px;
-    text-align: center;
-    padding-top: 100px;
-}
-
-#editInfo form input {
-    width: 350px;
-    height: 50px;
-    margin-top: 20px;
+    cursor: pointer;
 }

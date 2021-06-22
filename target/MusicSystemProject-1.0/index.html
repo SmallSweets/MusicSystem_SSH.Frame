@@ -5,16 +5,17 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="css/customer/CustomerIndexBackground.css">
     <link rel="stylesheet" type="text/css" href="css/global.css">
+    <script type="text/javascript" src="js/customer/index.js"></script>
 </head>
 <body>
 <!--    <div id="background"></div>-->
     <div class="login_box">
-        <h1>登录</h1>
+        <h1>欢迎登录</h1>
         <form action="Login" method="post">
             <input class="input" name="name" type="text" placeholder="Username"><br/><br/>
             <input class="input" name="password" type="password" placeholder="UserPassword"><br/><br/>
             <input class="button" type="submit" value="登录">
-            <input class="button" type="reset" value="重置">
+            <input class="button" type="button" onclick="otherPage()" value="注册">
             <a href="admin/index.html">管理员登录</a>
         </form>
     </div>

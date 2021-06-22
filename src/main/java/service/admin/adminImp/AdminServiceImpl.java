@@ -138,4 +138,15 @@ public class AdminServiceImpl extends ActionSupport implements AdminService {
         adminDao.deleteUser(id);
     }
 
+//    更新音乐信息
+    public void editMusicInfo() {
+        music = getMusic();
+        adminDao.editMusicInfo(music);
+    }
+
+//    更新用户信息
+    public void editUserInfo() {
+        user = getUser();
+        adminDao.editUserInfo(user);
+    }
 }

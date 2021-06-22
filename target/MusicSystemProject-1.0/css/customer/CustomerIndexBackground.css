@@ -23,7 +23,7 @@ body{
     display: flex;
     align-items: center;
     justify-content:center;
-    background-image: url("../../image/CustomerLoginbackground.jpg");
+    background-image: url("../../image/picture.jpg");
     /*背景图片大小*/
     background-size: 100% 100%;
 }
@@ -59,7 +59,7 @@ a{
     padding-top: 2rem;
     padding-bottom: 2rem;
     /*背景及不透明度*/
-    background-color: #00000060;
+    background-color: #ffffff20;
     text-align: center;
 }
 
@@ -68,6 +68,7 @@ a{
     height: 2rem;
     font-size: 10px;
     border-radius: 1.5rem;
+    cursor: pointer;
 }
 
 /*表单元素占位符样式*/
@@ -84,4 +85,8 @@ input::-webkit-input-placeholder {
     height: 1.5rem;
     background-color: #00000030;
     border-bottom: solid 2px white;
+}
+
+h1 {
+    margin-bottom: 20px;
 }

@@ -3,38 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="../css/global.css">
+    <link type="text/css" rel="stylesheet" href="../css/customer/Register.css">
     <script src="../js/customer/Register.js"></script>
     <script src="../js/jquery-3.5.1.js"></script>
 </head>
 <body>
-    <center>
+    <div id="registerBox">
         <form onsubmit="return false" id="info">
-            <label>
-                用户名：
-                <input type="text" id="input" onblur="judge()"><span id="out"></span>
+            <label><span class="text">用户名：</span>
+                <input type="text" name="name" id="input" onblur="judge()"><span id="out"></span>
             </label><br/>
-            <label>
-                密码：
+            <label><span class="text">密码：</span>
                 <input type="password" name="password"><br/>
             </label>
-            <label>
-                性别：
+            <label><span class="text">性别：</span>
                 <input type="text" name="sex"><br/>
             </label>
-            <label>
-                年龄：
+            <label><span class="text">年龄：</span>
                 <input type="text" name="age"><br/>
             </label>
-            <label>
-                地址：
+            <label><span class="text">地址：</span>
                 <input type="text" name="address"><br/>
             </label>
-            <label>
-                联系方式：
+            <label><span class="text">联系方式：</span>
                 <input type="text" name="phone"><br/>
             </label>
-            <input type="submit" value="注册" onclick="judge()"><input type="reset" value="重置">
+            <label>
+                <input type="text" name="vip" style="display: none" value="false"><br/>
+            </label>
+            <input type="submit" value="注册" onclick="register()">
         </form>
-    </center>
+    </div>
 </body>
 </html>

@@ -49,5 +49,20 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
 
+
+<!--  用户恶意登录过滤器-->
+  <filter>
+    <!-- 过滤器名称 可以随便定义 -->
+    <filter-name>loginFilter</filter-name>
+    <!-- 过滤器url 格式为： 包名.类名 -->
+    <filter-class>filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <!-- 过滤器名称 要和上面相同 -->
+    <filter-name>loginFilter</filter-name>
+    <!-- 请求哪个资源文件时调用过滤器  /* 代表网站内所有资源文件 -->
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
 </web-app>
         

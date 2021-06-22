@@ -1,16 +1,17 @@
-table {
-    margin-top: 1.5rem;
-    border-collapse: separate;
-    border-spacing: 5rem 1rem;
+#musicSearch, #musicSearchBtn {
+    font-size: 25px;
+    margin-top: 1rem;
+    border-radius: 10px;
 }
 
-#container {
-    width: 400px;
-    height: 500px;
-    display: none;
-    background-color: lightblue;
-    z-index: 9999;
-    position: fixed;
-    top: 100px;
-    left: 300px;
+#musicSearch {
+    height: 60px;
+    width: 20rem;
+    border: #6495ed90 solid 0.1rem;
+}
+
+#musicSearchBtn {
+    height: 65px;
+    width: 5rem;
+    cursor: pointer;
 }

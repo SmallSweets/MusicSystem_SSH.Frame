@@ -1,10 +1,16 @@
+body {
+    text-align: center;
+}
+
 table {
     margin-top: 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
     border-collapse: collapse;
 }
 
 th {
-    width: 7rem;
+    width: 10rem;
     text-align: center;
 }
 
@@ -12,19 +18,4 @@ td {
     border-bottom: orange solid 0.01rem;
     text-align: center;
     height: 3rem;
-}
-
-input {
-    font-size: 25px;
-    height: 3rem;
-    margin-top: 1rem;
-}
-
-#inputFra {
-    width: 20rem;
-    border: #6495ed90 solid 0.1rem;
-}
-
-#submitBtn {
-    width: 5rem;
 }

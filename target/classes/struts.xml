@@ -53,5 +53,9 @@
         <action name="AdminSelfInfo" class="adminServiceImpl" method="selfInfo" />
 <!--        管理员删除用户信息-->
         <action name="DeleteUser" class="adminServiceImpl" method="deleteUser" />
+<!--        管理员编辑音乐信息-->
+        <action name="EditMusicInfo" class="adminServiceImpl" method="editMusicInfo" />
+<!--        管理员编辑用户信息-->
+        <action name="EditUserInfo" class="adminServiceImpl" method="editUserInfo" />
     </package>
 </struts>

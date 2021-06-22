@@ -17,7 +17,7 @@ function find(){
                     var td = document.createElement("td");
                     tr.appendChild(td);
                     if (list[x] === "url"){
-                        td.innerHTML = "<a style='text-decoration:none;' href=" + res[i][list[x]] + ">▶</a>";
+                        td.innerHTML = "<span class='playBtn' style='display: none'>▶</span><audio src=" + res[i][list[x]] + "></audio>";
                         continue;
                     }
                     td.innerText = res[i][list[x]];

@@ -10,4 +10,6 @@ public interface AdminService {
     void selfInfo();
     void addUser();
     void deleteUser();
+    void editMusicInfo();
+    void editUserInfo();
 }

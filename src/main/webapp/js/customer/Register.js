@@ -11,10 +11,11 @@ function judge(){
             var result = res.substring(0,4);
             if(result == "have"){
                 inform.style.color = "red";
-                inform.innerText = "用户名已存在"
+                inform.innerText = "❌"
             }else {
                 inform.style.color = "green";
-                inform.innerText = "用户名可用";
+                inform.style.fontSize = "10px";
+                inform.innerText = "✔";
             }
         },
         error:function (){
@@ -26,9 +27,10 @@ function judge(){
 function register(){
     $.ajax({
         url:"Register",
-        data:$("#info").serialize(),
         dataType:"text",
         async:true,
+        type: "GET",
+        data:$("#info").serialize(),
         success:function (res){
             var result = res.substring(0,4);
             if (result == "succ"){

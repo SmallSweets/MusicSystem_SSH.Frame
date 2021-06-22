@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
-    <link rel="stylesheet" type="text/css" href="../css/admin/ShowAllMusic.css">
     <script src="../js/jquery-3.5.1.js" ></script>
     <script src="../js/admin/MakeHeader.js"></script>
+    <script src="../js/customer/ShowAllMusic.js"></script>
     <script src="../js/admin/ShowAllMusic.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/admin/ShowAllMusic.css">
 </head>
 <body>
-    <center>
-        <table id="box">
-            <tr><th>序号</th><th>歌曲名</th><th>歌手</th><th>添加时间</th><th>播放</th><th>编辑</th><th>删除</th></tr>
-        </table>
-    </center>
+    <table id="box">
+        <tr><th>序号</th><th>歌曲名</th><th>歌手</th><th>添加时间</th><th>播放</th><th>编辑</th><th>删除</th></tr>
+    </table>
 
-    <div id="editInfo"><form id="changeEdit"></form></div>
+<!--    编辑框-->
+    <div id="editInfo">
+        <form id="changeEdit"></form>
+    </div>
 </body>
 
-<script src="../js/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-    window.onload = function (){
+    $(document).ready(function (){
+        //动态生成标签
         ShowAllMusic();
-        $("hover_tr").mouseenter(function () {
-            $(this).css("background-color","#add8e650");
-        }).mouseleave(function (){
-            $(this).css("background-color","#ffffff");
-        });
-    }
+        //因为标签加载需要时间，所以这里等待标签加载完再添加事件
+        setTimeout("tr_hover()",500);
+        //添加 音乐点击播放事件
+        setTimeout("music_play()",1000);
+    })
 </script>
 </html>

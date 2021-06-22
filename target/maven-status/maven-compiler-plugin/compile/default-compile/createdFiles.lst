@@ -7,5 +7,6 @@ dao\admin\adminImpl\AdminDaoImpl.class
 service\admin\adminImp\AdminServiceImpl.class
 entity\User.class
 dao\user\UserDao.class
+filter\LoginFilter.class
 entity\Admin.class
 entity\Music.class

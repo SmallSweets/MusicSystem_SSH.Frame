@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin/AddInfo.css">
     <script src="../js/admin/MakeHeader.js"></script>
     <script src="../js/jquery-3.5.1.js" ></script>
     <script src="../js/admin/AddMusic.js"></script>
 </head>
 <body>
-    <center>
+    <div id="container">
 <!--        当提交表单时执行js代码，return false表示禁止提交表单-->
         <form id="musicInfo" onsubmit="return false" method="get">
-            <label >音乐名称：
+            <label><span class="text">音乐名称：</span>
                 <input type="text" name="music.name" ><br/>
             </label>
-            <label>歌手：
+            <label><span class="text">歌手：</span>
                 <input type="text" name="music.singer"><br/>
             </label>
-            <label>添加时间：
+            <label><span class="text">添加时间：</span>
                 <input type="text" name="music.time"><br/>
             </label>
-            <label>歌曲url：
+            <label><span class="text">播放地址：</span>
                 <input type="text" name="music.url"><br/>
             </label>
             <input type="submit" value="保存" onclick="save()">
-            <input type="reset" value="重置">
         </form>
-    </center>
+    </div>
 </body>
 </html>

@@ -5,23 +5,22 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../css/global.css">
     <link rel="stylesheet" type="text/css" href="../css/admin/SearchUser.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin/ShowAllUser.css">
     <script src="../js/admin/MakeHeader.js"></script>
     <script src="../js/jquery-3.5.1.js" ></script>
     <script src="../js/admin/SearchUser.js"></script>
 </head>
 <body>
-    <center>
-        <form onsubmit="return false">
-            <label>
-                <input id="musicSearch" type="text" name="input"><input type="submit" onclick="search()">
-            </label>
-        </form>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <table id="box"></table>
-    </center>
+    <form onsubmit="return false">
+        <label>
+            <input id="musicSearch" type="text" name="input"><input id="musicSearchBtn" type="submit" onclick="search()" value="搜索">
+        </label>
+    </form>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <table id="box"></table>
 
     <div id="container"></div>
 </body>

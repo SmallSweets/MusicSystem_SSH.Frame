@@ -10,11 +10,11 @@
     <script src="../js/customer/ShowAllMusic.js"></script>
 </head>
 <body>
-    <center>
+    <div id="container">
         <table id="box">
             <tr><th>序号</th><th>歌曲名</th><th>歌手</th><th>添加时间</th><th>播放地址</th></tr>
         </table>
-    </center>
+    </div>
 </body>
 
 <script type="text/javascript">
@@ -23,7 +23,7 @@
         ShowAllMusic();
         //因为标签加载需要时间，所以这里等待标签加载完再添加事件
         setTimeout("tr_hover()",500);
-        //添加音乐点击播放事件
+        //添加 音乐点击播放事件
         setTimeout("music_play()",1000);
     })
 </script>

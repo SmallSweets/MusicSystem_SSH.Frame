@@ -1,10 +1,61 @@
-#container {
-    width: 400px;
-    height: 500px;
-    display: none;
-    background-color: lightblue;
-    z-index: 9999;
+body {
+    text-align: center;
+}
+
+table {
+    margin: 1rem auto;
+    border-collapse: collapse;
+}
+
+th {
+    width: 6rem;
+    text-align: center;
+}
+
+td {
+    border: blue solid 0.01rem;
+    text-align: center;
+    height: 3rem;
+}
+
+/*编辑音乐信息 弹出窗口样式*/
+#editInfo {
     position: fixed;
-    top: 100px;
-    left: 300px;
+    /*------*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /*实现上下左右居中*/
+    /*------*/
+    display: none;
+    width: 500px;
+    height: 530px;
+    background-color: cornflowerblue;
+    z-index: 9999;
+    text-align: center;
+    border: salmon solid 2px;
+}
+
+#editInfo form input {
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#editInfo form span {
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+}
+
+#editInfo form button {
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    width: 70px;
+    height: 35px;
 }

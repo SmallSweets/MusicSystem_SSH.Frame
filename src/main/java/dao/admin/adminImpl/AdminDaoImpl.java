@@ -1,6 +1,8 @@
 package dao.admin.adminImpl;
 
 import dao.admin.AdminDao;
+import entity.Music;
+import entity.User;
 import net.sf.json.JSONArray;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -121,6 +123,30 @@ public class AdminDaoImpl implements AdminDao {
         transaction = session.beginTransaction();
         query = session.createQuery("delete User where id = ?1");
         query.setParameter(1,Integer.parseInt(id));
+        query.executeUpdate();
+        transaction.commit();
+        session.close();
+    }
+
+//    更新音乐信息
+    public void editMusicInfo(Object object) {
+        Session session = sessionFactory.openSession();
+        transaction = session.beginTransaction();
+        query = session.createQuery("update Music m set m.name = :name,m.singer = :singer,m.time = :time,m.url = :url where m.id = :id");
+        Music music = (Music) object;
+        query.setProperties(music);
+        query.executeUpdate();
+        transaction.commit();
+        session.close();
+    }
+
+//    更新用户信息
+    public void editUserInfo(Object object) {
+        Session session = sessionFactory.openSession();
+        transaction = session.beginTransaction();
+        query = session.createQuery("update User u set u.name = :name,u.password = :password,u.sex = :sex,u.age = :age,u.address = :address,u.phone = :phone,u.vip = :vip where u.id = :id");
+        User user = (User) object;
+        query.setProperties(user);
         query.executeUpdate();
         transaction.commit();
         session.close();

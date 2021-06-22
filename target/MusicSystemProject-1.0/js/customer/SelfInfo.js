@@ -1,8 +1,9 @@
 var list = ["id","name","password","sex","age","address","phone","vip"]
-
+var propertyName = ["序号：","用户名：","密码：","性别：","年龄：","地址：","电话：","是否会员："]
 function selfInfo(){
-    var form = document.getElementById("info");
-
+    var backgroundBoard = document.getElementById("backgroundBoard");
+    var div = document.getElementById("container");
+    backgroundBoard.style.backgroundImage = "url(../image/SelfInfoBackground.jpg?timestamp=" + new Date().getTime() + ")";
     $.ajax({
         url:"SelfInfo",
         dataType:"json",
@@ -10,11 +11,14 @@ function selfInfo(){
         success:function (res){
             for (var i = 0;i < res.length;i++){
                 for (var x = 0;x < list.length;x++){
-                    var input = document.createElement("input");
+                    var p = document.createElement("p");
                     var br = document.createElement("br");
-                    form.appendChild(input);
-                    form.appendChild(br);
-                    input.value = res[i][list[x]];
+                    var span = document.createElement("span");
+                    span.innerText = propertyName[x];
+                    div.appendChild(span);
+                    div.appendChild(p);
+                    div.appendChild(br);
+                    p.innerText = res[i][list[x]];
                 }
             }
         }

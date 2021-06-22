@@ -1,0 +1,7 @@
+body {
+    width: 100%;
+    /*相对于视框的高度 视框高度100vh*/
+    height: 100vh;
+    background-image: url("../../image/picture2.jpg");
+    background-size: 100% 100%;
+}

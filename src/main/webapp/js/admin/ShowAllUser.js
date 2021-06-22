@@ -40,7 +40,7 @@ function Show(){
 
 // 编辑 用户信息
 function showEditDiv() {
-    var div = $("#container");
+    var div = $("#editInfo");
     var id = this.getAttribute("class");
     div.css("display","block");
     $.ajax({
@@ -50,15 +50,57 @@ function showEditDiv() {
         dataType: "json",
         type:"GET",
         success:function (data){
-            alert(data);
-            var form = document.createElement("form");
+            var form = document.getElementById("changeEdit");
+            var submit = document.createElement("button");
+            var reset = document.createElement("button")
+            var cancel = document.createElement("button");
             div.append(form);
             for (var i = 0;i < list.length;i++){
                 var input = document.createElement("input");
+                var span = document.createElement("span");
+                if (i == 0){
+                    span.innerText = "序号：";
+                    input.readOnly = "readonly";
+                    input.name = "user.id";
+                }else if(i == 1){
+                    span.innerText = "用户名：";
+                    input.name = "user.name";
+                }else if(i == 2){
+                    span.innerText = "密码：";
+                    input.name = "user.password";
+                }else if (i == 3){
+                    span.innerText = "性别：";
+                    input.name = "user.sex";
+                }else if (i == 4){
+                    span.innerText = "年龄：";
+                    input.name = "user.age";
+                }else if (i == 5){
+                    span.innerText = "住址：";
+                    input.name = "user.address";
+                }else if (i == 6){
+                    span.innerText = "电话：";
+                    input.name = "user.phone";
+                }else {
+                    span.innerText = "是否会员：";
+                    input.name = "user.vip";
+                }
+                form.appendChild(span);
                 form.appendChild(input);
                 form.appendChild(document.createElement("br"));
                 input.value = data[0][list[i]];
             }
+            submit.innerText = "更新";
+            reset.innerText = "重置";
+            cancel.innerText = "取消";
+            cancel.className = "cancel";
+            // 点击取消按钮 设置div不可见
+            cancel.click(function (){div.css("display","none")});
+            submit.type = "submit";
+            submit.onclick = updateInfo;
+            reset.type = "reset";
+            form.append(submit);
+            form.append(reset);
+            form.append(cancel);
         }
     })
 }
@@ -66,7 +108,6 @@ function showEditDiv() {
 // 删除 用户信息
 function det() {
     var id = this.getAttribute("id");
-    alert(id);
     $.ajax({
         url: "DeleteUser",
         async: true,
@@ -80,4 +121,20 @@ function det() {
             alert("删除失败");
         }
     })
+}
+
+//更新用户信息
+function updateInfo() {
+    $.ajax({
+        url:"EditUserInfo",
+        async:true,
+        type:"GET",
+        data:$('#changeEdit').serialize(),
+        success:function (){
+            alert("更新成功");
+        },
+        error:function (){
+            alert("更新失败");
+        }
+    });
 }

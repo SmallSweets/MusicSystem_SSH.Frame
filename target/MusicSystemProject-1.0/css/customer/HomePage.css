@@ -4,49 +4,71 @@ img {
     height: 25rem;
     cursor: pointer;
 }
+
 #transform {
-    position: absolute;
-    top: 5rem;
-    left: 17rem;
     list-style: none;
 }
+
 /*设置轮播图片样式*/
 #transform li {
     position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
     opacity: 100;
 }
+
 #point {
-    position: absolute;
-    top: 31rem;
-    left: 34rem;
+    width: 200px;
     display: flex;
     list-style: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: auto;
 }
+
 /*小点样式*/
 #point li {
+    margin: auto;
     width: 20px;
     height: 20px;
     background-color: aqua;
     border-radius: 50%;
-    margin-left: 20px;
     cursor: pointer;
 }
 /*    左右切换按钮样式*/
 #left {
-    position: absolute;
-    top: 15rem;
-    left: 15%;
+    width: 200px;
+    float: left;
+    position: relative;
+    top: 255px;
     font-size: 70px;
     font-weight: bold;
     color: #00000070;
     cursor: pointer;
+    text-align: left;
 }
+
 #right {
-    position: absolute;
-    top: 15rem;
-    left: 80%;
+    width: 200px;
+    float: right;
+    position: relative;
+    top: 255px;
     font-size: 70px;
     font-weight: bold;
     color: #00000070;
     cursor: pointer;
+    text-align: right;
+}
+
+#box {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    width: 1000px;
+    height: 550px;
 }

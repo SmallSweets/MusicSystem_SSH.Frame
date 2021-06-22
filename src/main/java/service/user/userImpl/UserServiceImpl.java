@@ -21,7 +21,7 @@ public class UserServiceImpl extends ActionSupport implements UserService, Model
 
     private HttpServletRequest request;
     private HttpServletResponse response;
-    private User user;
+    private User user = new User();
 
 //    用户登录
     public String login() {

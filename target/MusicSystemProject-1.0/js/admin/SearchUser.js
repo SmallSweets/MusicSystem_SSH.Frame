@@ -11,7 +11,7 @@ function search(){
         dataType:"json",
         async:true,
         success:function (res){
-            table.innerHTML = "<tr><th>序号</th><th>用户名</th><th>密码</th><th>性别</th><th>年龄</th><th>地址</th><th>联系电话</th><th>是否会员</th></tr>"
+            table.innerHTML = "<tr><th>序号</th><th>用户名</th><th>密码</th><th>性别</th><th>年龄</th><th>地址</th><th>联系电话</th><th>是否会员</th><th>编辑</th><th>删除</th></tr>"
             for(var i = 0;i < res.length;i++){
                 var tr = document.createElement("tr");
                 table.appendChild(tr);

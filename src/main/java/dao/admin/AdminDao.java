@@ -1,5 +1,7 @@
 package dao.admin;
 
+import entity.Music;
+
 public interface AdminDao {
     String login(String name,String password);
 
@@ -18,4 +20,8 @@ public interface AdminDao {
     void addUser(Object object);
 
     void deleteUser(String id);
+
+    void editMusicInfo(Object object);
+
+    void editUserInfo(Object object);
 }
