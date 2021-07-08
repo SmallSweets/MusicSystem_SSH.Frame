@@ -18,12 +18,19 @@ function find(){
                     tr.appendChild(td);
                     if (list[x] === "url"){
                         td.innerHTML = "<span class='playBtn' style='display: none'>▶</span><audio src=" + res[i][list[x]] + "></audio>";
+                        td.style.cursor = "pointer";
                         continue;
                     }
                     td.innerText = res[i][list[x]];
                 }
                 $("tr").addClass("hover_tr");
             }
+
+            //因为标签加载需要时间，所以这里等待标签加载完再添加事件
+            setTimeout("tr_hover()",500);
+            //添加 音乐点击播放事件
+            setTimeout("music_play()",1000);
+
         },
         error:function (){
             alert("搜索失败");

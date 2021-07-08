@@ -22,6 +22,7 @@ function ShowAllMusic(){
                     //在td标签中写入内容
                     if (list[x] === "url"){
                         td.innerHTML = "<span class='playBtn' style='display: none'>▶</span><audio src=" + data[i][list[x]] + "></audio>";
+                        td.style.cursor = "pointer";
                         continue;
                     }
                     td.innerText = data[i][list[x]];

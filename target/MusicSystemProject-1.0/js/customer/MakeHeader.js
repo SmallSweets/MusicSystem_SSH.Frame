@@ -1,4 +1,5 @@
 document.writeln("<link rel=\'stylesheet\' type=\'text/css\' href=\'../css/globalHeader.css\'>");
+document.writeln("<link rel=\'icon\' href=\'../image/music.png\' sizes=\"32x32\">");
 document.writeln("<footer>");
 document.writeln("    <div class=\'title_bar\'>");
 document.writeln("        <div>");
